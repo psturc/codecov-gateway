@@ -1,4 +1,4 @@
-FROM haproxytech/haproxy-alpine:3.3
+FROM haproxytech/haproxy-alpine:3.5
 RUN apk update --no-cache && apk upgrade --no-cache openssl && apk add --no-cache gettext
 RUN mkdir -p /etc/codecov/ssl/certs && chown haproxy:haproxy /etc/codecov/ssl/certs && chown haproxy:haproxy /etc/haproxy
 COPY --chown=haproxy:haproxy --chmod=644 config/0-haproxy.conf /etc/haproxy/0-haproxy.conf.template
